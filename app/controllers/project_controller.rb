@@ -7,11 +7,6 @@ class ProjectController < ApplicationController
   def update
     @todo = Todo.find(params[:id])
     @todo.update!(isCompleted: !@todo.isCompleted)
-  rescue ActiveRecord::RecordNotFound => e
-    if e
-      render file: "#{Rails.root}/public/404.html", layout: false, status: 404
-      return
-    end
   end
 
   def create
