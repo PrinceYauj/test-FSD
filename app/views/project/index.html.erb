@@ -1,1 +1,8 @@
-<%= @res %>
+<% @projects.each do |project| %>
+  <%= project.inspect %>
+  <br>
+  <% @todos.select{ |todo| todo.project_id == project.id }.each do |todo| %>
+    <%= todo.inspect %>
+    <br>
+  <% end %>
+<% end %>

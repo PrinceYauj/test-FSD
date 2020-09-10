@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   get '/projects', to: 'project#index'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  patch '/projects/:id/todo/:id', to: 'project#update'
+  post '/todos', to: 'project#create'
 end
